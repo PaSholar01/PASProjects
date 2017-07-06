@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <!-- Bean definitions go here -->
+    <bean id="userIO" class="com.tsguild.flooringmastery.ui.UserIOConsoleImpl"/>
+    
+    <bean id="view" class="com.tsguild.flooringmastery.ui.FlooringMasteryView">
+        <constructor-arg ref="userIO"/>
+    </bean>
+    
+    <bean id="taxDao" class="com.tsguild.flooringmastery.dao.FlooringMasteryTaxDaoImpl">
+        <constructor-arg value="Taxes.txt"/>
+    </bean>
+    
+    <bean id="productDao" class="com.tsguild.flooringmastery.dao.FlooringMasteryProductDaoImpl">
+        <constructor-arg value="Products.txt"/>
+    </bean>
+    
+    <bean id="configDao" class="com.tsguild.flooringmastery.dao.ConfigurationDaoImpl"/>
+    
+    <bean id="orderDao" class="com.tsguild.flooringmastery.dao.FlooringMasteryOrderDaoImpl"/>
+    
+    <bean id="auditDao" class="com.tsguild.flooringmastery.dao.FlooringMasteryAuditDaoFileImpl"/>
+    
+    <bean id="service" class="com.tsguild.flooringmastery.service.FlooringMasteryServiceLayerImpl">
+        <constructor-arg ref="orderDao"/>
+        <constructor-arg ref="productDao"/>
+        <constructor-arg ref="taxDao"/>
+        <constructor-arg ref="configDao"/>
+        <constructor-arg ref="auditDao"/>
+    </bean>
+    
+    <bean id="controller" class="com.tsguild.flooringmastery.controller.FlooringMasteryController">
+        <constructor-arg ref="view"/>
+        <constructor-arg ref="service"/>
+    </bean>
+    
+    <bean id="logging" class="com.tsguild.flooringmastery.advice.LoggingAdvice">
+        <constructor-arg ref="auditDao"/>
+    </bean>
+    
+    <bean id="loadLogging" class="com.tsguild.flooringmastery.advice.LoadingAdvice">
+        <constructor-arg ref="auditDao"/> 
+    </bean>
+      
+    <aop:config>
+        <aop:aspect ref="logging">
+            <aop:after-throwing 
+                method="createExceptionLogEntry"
+                pointcut="execution(* com.tsguild.flooringmastery.service.FlooringMasteryServiceLayer.validateNewOrderProduct(..))"
+                throwing="exceptionName"
+            />
+            <aop:after-throwing 
+                method="createExceptionLogEntry"
+                pointcut="execution(* com.tsguild.flooringmastery.service.FlooringMasteryServiceLayer.validateNewOrderState(..))"
+                throwing="exceptionName"
+            />
+            <aop:after-throwing 
+                method="createExceptionLogEntry"
+                pointcut="execution(* com.tsguild.flooringmastery.service.FlooringMasteryServiceLayer.getOrderByID(..))"
+                throwing="exceptionName"
+            />
+            <aop:after-throwing 
+                method="createExceptionLogEntry"
+                pointcut="execution(* com.tsguild.flooringmastery.service.FlooringMasteryServiceLayer.validateDateToSearch(..))"
+                throwing="exceptionName"
+            />
+        </aop:aspect>
+        <aop:aspect ref="loadLogging">
+            <aop:after-throwing 
+                method="createExceptionLogEntry"
+                pointcut="execution(* com.tsguild.flooringmastery.dao.FlooringMasteryOrderDao.loadOrderFile(..))"
+                throwing="exceptionName"
+            />
+        </aop:aspect>
+    </aop:config>
+    
+    
+</beans>

@@ -1,0 +1,23 @@
+2017-06-10 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-15
+2017-06-10 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-15
+2017-06-10 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-15
+2017-06-10 : loadOrderFile : The file Order_Date_Files/Orders_06112017.txt contained duplicate Order ID's.
+2017-06-10 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-15
+2017-06-11 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@4fe767f3
+2017-06-11 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@433d61fb
+2017-06-11 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-05-12
+2017-06-12 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-16
+2017-06-12 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@769f71a9
+2017-06-12 : validateNewOrderProduct : FlooringMasteryInvalidProductException : com.tsguild.flooringmastery.model.Order@4c9f8c13
+2017-06-12 : getOrderByID : FlooringMasteryDoesNotExistException : 22
+2017-06-12 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-12
+2017-06-12 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-17
+2017-06-12 : validateDateToSearch : FlooringMasteryDoesNotExistException : 2017-06-17
+2017-06-12 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@4c9f8c13
+2017-06-12 : validateNewOrderProduct : FlooringMasteryInvalidProductException : com.tsguild.flooringmastery.model.Order@5ae50ce6
+2017-06-12 : validateNewOrderProduct : FlooringMasteryInvalidProductException : com.tsguild.flooringmastery.model.Order@470f1802
+2017-06-12 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@5bd03f44
+2017-06-12 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@2805c96b
+2017-06-12 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@2805c96b
+2017-06-12 : validateNewOrderState : FlooringMasteryInvalidStateException : com.tsguild.flooringmastery.model.Order@2805c96b
+2017-06-12 : validateNewOrderProduct : FlooringMasteryInvalidProductException : com.tsguild.flooringmastery.model.Order@5c909414
