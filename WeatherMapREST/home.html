@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather Map</title>
+		<link href="css/bootstrap.css"
+			  rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header text-center">
+			<h1>Weather Page</h1>
+			</div>
+			<ul class="list-group" id="errorMessages"></ul>
+			
+			<!--
+			Add a row to our container here, it will contain the horizontal zipcode form thingy
+			-->
+			<div class="row">
+		    <!--
+		    Add a column here to take up the first row and contain our horizontal zipcode form thingy
+		    -->
+		    	<div class="col-md-12 text-center">
+		    		<form class="form-inline" role="form" id="zipcode-search-form">
+		    			<!--
+		    			Add the Zipcode search function form group
+		    			-->
+		    			<div class="form-group">
+		    				<label for="search-by-zip" class="control-label">
+		    					Zipcode:
+		    				</label>
+
+		    				<input 	required title ="Must be a valid 5 digit zipcode."
+		    						type="text"
+		    						maxlength="5" 
+		    						class="form-control"
+		    						id="search-by-zip"
+		    						placeholder="Zipcode" required/>
+		    			
+		    			</div>
+		    			<!--
+		    			Add the Units type searchbox thing form group
+		    			-->
+		    			<div class="form-group">
+		    				<label for="unit-type" class="control-label">
+		    					Units:
+		    				</label>
+
+		    			
+		    				<select class="form-control" id="unit-type">
+		    					<option value="imperial">Imperial</option>
+		    					<option value="metric">Metric</option>
+		    				</select>
+		    			
+		    			</div>
+		    			
+		    			<!-- 
+		    			Add the Get Weather Button
+		    			-->
+		    			<div class="form-group">
+		    				
+		    				<button type="button"
+		    						id="add-button"
+		    						class="btn btn-default">
+		    						Get Weather
+		    				</button>
+		    			    
+		    			</div>
+		    		</form>
+		    	</div><!--End Column div-->
+			</div><!-- End Row Div-->
+			<hr/>
+			<div class="row">
+				<div class="col-md-12" id="current">
+				<h2>Current Conditions in <span id="json-city"></span></h2>
+
+					<div class="col-md-6" id="current-icon">	
+					</div>
+
+					<div class="col-md-6" id="current-data">
+				    </div>
+
+				</div><!--End Column div-->
+			</div><!--End Row Div-->
+			<hr/>
+			<div class="row">
+				<div class="col-md-12" id="five-day">
+				<h2>Five Day Forecast</h2>
+				<div id="five-day-cast">
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>
+	</body>
+</html>

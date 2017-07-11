@@ -1,0 +1,6 @@
+1::Elephant::2.50::9
+2::GrubWorms::1.50::6
+3::Weasel::5.00::2
+4::Mackerel::2.50::10
+5::Greenland Shark::15.00::1
+6::Seal::3.00::5

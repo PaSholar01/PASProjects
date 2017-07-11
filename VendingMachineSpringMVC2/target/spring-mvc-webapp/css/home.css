@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 26, 2017, 11:08:07 AM
+    Author     : apprentice
+*/
+
+
+#contentWrapper {
+	padding: 0;
+	border-left: 15px solid #54bae5;
+	border-bottom: 50px solid #54bae5;
+	
+}
+
+#leftForm {
+	border-right: 10px solid #54bae5;
+
+}
+
+.newItemSpacing {
+	width: 100%;
+	margin: 1.66%;
+	float: left;
+}
+
+.newItemSpacing .itemstylez {
+	display: inline;
+	font-size: 20px;
+}
+
+#itemBox {
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+	margin-bottom: 10px;
+}
+
+.isClear{
+	clear: left;
+}
+
+#compMessage {
+	background-color: white;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+input[type = text] {
+	background-color: white;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+#changeMessage {
+	background-color: white;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+	background-color: #54bae5;
+	color: white;
+}
+
+body {
+	background-image: linear-gradient(#e0ecff, rgba(0,0,0,0.1));
+	background-repeat: no-repeat;
+}
+
+html {
+	min-height: 100%;
+	margin: 0;
+}
+body {
+	min-height: 100%;
+	margin: 0;
+}
+
